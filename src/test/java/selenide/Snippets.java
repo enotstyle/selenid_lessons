@@ -11,6 +11,7 @@ import static com.codeborne.selenide.Condition.empty;
 import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selectors.*;
 import static com.codeborne.selenide.Selenide.*;
+import static com.codeborne.selenide.WebDriverRunner.url;
 
 // this is not a full list, just the most common
 public class Snippets {
@@ -118,6 +119,9 @@ public class Snippets {
     $(byClassName("red")).click();
     //ищет элемент, содержащий указанный класс
     $(".red").click();
+
+    //получает текущий url
+    String url = url();
   }
 
   void actions_examples() {

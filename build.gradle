@@ -1,7 +1,9 @@
+//указание что в проекте используется java
 plugins {
     id 'java-library'
 }
 
+//откуда подтягиваются зависимости
 repositories {
     mavenCentral()
 }
@@ -10,6 +12,7 @@ compileTestJava {
     options.encoding = 'UTF-8'
 }
 
+//зависимости, библиотеки которые используем
 dependencies {
     testImplementation(
             "com.codeborne:selenide:6.10.3",
@@ -17,6 +20,7 @@ dependencies {
     )
 }
 
+//используем junit для тестов
 test {
     useJUnitPlatform{}
 }
