@@ -164,7 +164,7 @@ public class Snippets {
     actions().moveToElement($("div")).clickAndHold().moveByOffset(300, 200).release().perform();
 
     // old html actions don't work with many modern frameworks
-    //выбрать элемент и выбрать пункт дропдауна
+    //выбрать элемент и выбрать пункт дропдауна, только если тэг select, а внутри него option
     $("").selectOption("dropdown_option");
     //выбрать элемент и выбрать пункт радиобатона
     $("").selectRadio("radio_options");
