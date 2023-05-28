@@ -7,13 +7,13 @@ import static com.codeborne.selenide.Selenide.$;
 
 public class RegistrationResultsModal {
 
-    public void verifyModalAppears() {
+    public void modalAppears() {
         $(".modal-dialog").should(appear);
         $("#example-modal-sizes-title-lg").shouldHave(text("Thanks for submitting the form"));
     }
 
 
     public void verifyResults(String key, String value) {
-        $(".table-responsive").$(byText(key)).sibling(1).shouldHave(text(value));
+        $(".table-responsive").$(byText(key)).sibling(0).shouldHave(text(value));
     }
 }

@@ -15,12 +15,12 @@ public class PracticeFormPO extends BaseTest {
         String firstName = "Ivan";
         String lastName = "Petrov";
         String email = "IvanPetrov@mail.ru";
-        String phoneNumber = "88005553535";
+        String phoneNumber = "1234567890";
         String subject = "Computer Science";
         String currentAddress = "kirova 22-44";
         String state = "NCR";
         String city = "Noida";
-        File testFile = new File("C:\\Users\\Terenin.Iva\\IdeaProjects\\selenid_lessons\\src\\test\\resources\\readme.txt");
+        File testFile = new File("src/test/resources/readme.txt");
 
         PracticeFormPage practiceFormPage = new PracticeFormPage();
 
@@ -38,7 +38,11 @@ public class PracticeFormPO extends BaseTest {
                 .setCurrentAddress(currentAddress)
                 .setState(state)
                 .setCity(city)
-                .submit();
+                .submit()
+                .resultModalAppears()
+                .verifyResultModal("Student Name", firstName + " " + lastName)
+                .verifyResultModal("Student Email", email)
+                .verifyResultModal("Mobile", phoneNumber);
     }
 }
 

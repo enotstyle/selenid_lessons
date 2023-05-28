@@ -90,12 +90,12 @@ public class PracticeFormPage {
         return this;
     }
 
-    public PracticeFormPage verifyResultModalAppears() {
-        resultsModal.verifyModalAppears();
+    public PracticeFormPage resultModalAppears() {
+        resultsModal.modalAppears();
         return this;
     }
 
-    public PracticeFormPage verifyResults(String key, String value) {
+    public PracticeFormPage verifyResultModal(String key, String value) {
         resultsModal.verifyResults(key, value);
         return this;
     }
