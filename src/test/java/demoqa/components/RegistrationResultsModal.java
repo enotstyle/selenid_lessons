@@ -14,6 +14,19 @@ public class RegistrationResultsModal {
 
 
     public void verifyResults(String key, String value) {
+        String[] labelNames = {
+                "Student Name",
+                "Student Email",
+                "Gender",
+                "Mobile",
+                "Date of Birth",
+                "Subjects",
+                "Hobbies",
+                "Picture",
+                "Address",
+                "State and City"};
         $(".table-responsive").$(byText(key)).sibling(0).shouldHave(text(value));
+
+
     }
 }

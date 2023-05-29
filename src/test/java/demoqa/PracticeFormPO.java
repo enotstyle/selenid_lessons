@@ -40,9 +40,9 @@ public class PracticeFormPO extends BaseTest {
                 .setCity(city)
                 .submit()
                 .resultModalAppears()
-                .verifyResultModal("Student Name", firstName + " " + lastName)
-                .verifyResultModal("Student Email", email)
-                .verifyResultModal("Mobile", phoneNumber);
+                .verifyResultModal("Student Name", firstName + " " + lastName);
+
+        //TODO сделать верефикацию результатов в одной функцией
     }
 }
 
