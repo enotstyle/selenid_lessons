@@ -1,5 +1,6 @@
 package other_test;
 
+import com.codeborne.selenide.CollectionCondition;
 import org.junit.jupiter.api.*;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvFileSource;
@@ -25,27 +26,31 @@ public class JUnitSimpleTest {
 
     @CsvSource({
             "Allure testops, https://qameta.io",
-            "Selenide, https://selenide.org"}
-    )
-    @ParameterizedTest(name = "Тест {0}, на {1}")
+            "Selenide, https://selenide.org"
+    })
+    // OR!!!
+    @CsvFileSource(resources = "/testData.csv")
+    @ParameterizedTest(name = "Адрес {1} должен быть в выдаче гугла по запросу {0}")
+    //
     @Tags({@Tag("BLOCKER"), @Tag("UI_TEST")})
-    void searchResultsCountTest(
+    void productSiteUrlShouldBePresentInResultsOfSearchInGoggleByProductNameQuery(
             String productName,
-            String productUrl) {
+            String productUrl
+    ) {
         $("[name=q]").setValue(productName).pressEnter();
         $("[id=search]").shouldHave(text(productUrl));
     }
 
-    @CsvSource({
-            "Allure testops, https://qameta.io",
-            "Selenide, https://selenide.org"}
+    @ValueSource(
+            strings = {"Allure testops", "Selenide"}
     )
-
-    @ParameterizedTest(name = "Тест {0}, на {1}")
+    @ParameterizedTest(name = "Адрес {1} должен быть в выдаче гугла по запросу {0}")
+    //
     @Tags({@Tag("BLOCKER"), @Tag("UI_TEST")})
-    void searchResultsCountTest(String productName=) {
+    void searchResultsCountTest(String productName) {
         $("[name=q]").setValue(productName).pressEnter();
-        $$("[id=search]").shouldHave(text(productUrl));
+        $$("div[class='g']").shouldHave(CollectionCondition.sizeGreaterThan(5));
     }
+
 
 }

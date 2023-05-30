@@ -20,7 +20,7 @@ public class PracticeFormPO extends BaseTest {
         String currentAddress = "kirova 22-44";
         String state = "NCR";
         String city = "Noida";
-        File testFile = new File("src/test/resources/readme.txt");
+        File testFile = new File("C:\\Users\\Terenin.Iva\\IdeaProjects\\selenid_lessons\\src\\test\\resources\\readme.txt");
 
         PracticeFormPage practiceFormPage = new PracticeFormPage();
 
