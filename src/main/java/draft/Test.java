@@ -9,3 +9,19 @@ public class Test {
     }
 
 }
+
+
+class Duck {
+    String color;
+    String name;
+
+    public Duck(String color, String name) {
+        this.color = color;
+        this.name = name;
+    }
+
+    public void fly() {
+        System.out.println("Утка летит");
+    }
+
+}

@@ -299,7 +299,7 @@ public class Snippets {
 
     //создание файла
     File file = new File("src/test/resources/readme.txt");
-    //загрузка файла
+    //загрузка файла "input[type=file]"
     $("#file-upload").uploadFile(file);
     $("#file-upload").uploadFromClasspath("readme.txt");
     // don't forget to submit!
