@@ -1,9 +1,9 @@
 # Created by .ignore support plugin (hsz.mobi)
 .idea
 .gradle
-.allure
+.allure.SelenideTest
 build
 video
 out
-allure-results
+allure.SelenideTest-results
 .DS_Store

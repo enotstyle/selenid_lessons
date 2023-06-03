@@ -12,6 +12,7 @@ import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selectors.*;
 import static com.codeborne.selenide.Selenide.*;
 import static com.codeborne.selenide.WebDriverRunner.url;
+import static org.openqa.selenium.By.linkText;
 
 // this is not a full list, just the most common
 public class Snippets {
@@ -89,6 +90,9 @@ public class Snippets {
     $(byTagAndText("div", "full text"));
     //ищет элементы, которые имеют тег "div" и содержат часть строки
     $(withTagAndText("div", "ull text"));
+
+    //кликает по элементу с ссылкой (значение атрибута href)
+    $(linkText("eroshenkoam/allure-example")).click();
 
     //возвращает родительский элемент найденного элемента
     $("").parent();

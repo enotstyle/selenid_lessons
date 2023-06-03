@@ -1,6 +1,21 @@
 //указание что в проекте используется java
 plugins {
     id 'java-library'
+    id 'io.qameta.allure' version "2.11.2"
+}
+
+allure {
+    report { //секция репорта
+        version.set("2.19.0")
+    }
+    adapter { // отвечает за появление папки build/allure-results
+        aspectjWeaver.set(true)  // обработка аннотации @Step
+        frameworks {
+            junit5 { //название фреймворка
+                adapterVersion.set("2.19.0") //версия интеграции фреймворка и Allure
+            }
+        }
+    }
 }
 
 //откуда подтягиваются зависимости
@@ -23,11 +38,15 @@ dependencies {
             "com.codeborne:xls-test:1.4.3",
             "com.opencsv:opencsv:5.7.1",
             "com.google.code.gson:gson:2.10",
-            "com.github.javafaker:javafaker:1.0.2"
+            "com.github.javafaker:javafaker:1.0.2",
+            "io.qameta.allure:allure-selenide:2.19.0"
+
     )
+
+
 }
 
 //используем junit для тестов
 test {
-    useJUnitPlatform{}
+    useJUnitPlatform {}
 }
