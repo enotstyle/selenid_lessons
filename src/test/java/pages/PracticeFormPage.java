@@ -12,6 +12,7 @@ import static com.codeborne.selenide.Selenide.executeJavaScript;
 
 public class PracticeFormPage {
 
+
     private final static String titleText = "Student Registration Form";
     RegistrationResultsModal resultsModal = new RegistrationResultsModal();
     Calendar calendar = new Calendar();

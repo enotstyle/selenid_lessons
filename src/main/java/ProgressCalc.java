@@ -15,11 +15,11 @@ public class ProgressCalc {
     }
 
     private String normalizeCurrentTime() {
-        return "Просмотрено " + currentMinutes / 60 + ":" + currentMinutes % 60;
+        return "Просмотрено: " + currentMinutes / 60 + ":" + currentMinutes % 60;
     }
 
     private String normalizeLeftTime() {
-        return "Осталось " + leftMinutes / 60 + ":" + leftMinutes % 60;
+        return "Осталось: " + leftMinutes / 60 + ":" + leftMinutes % 60;
     }
 
     @Override
@@ -32,6 +32,11 @@ public class ProgressCalc {
 class Test {
     public static void main(String[] args) {
         ProgressCalc calc = new ProgressCalc();
-        calc.addMinutes(1530);
+        System.out.println("-----------------------");
+        calc.addMinutes(2140); // 1-14 lessons
+        System.out.println("-----------------------");
+        System.out.println("-----------------------");
+        calc.addMinutes(120); // 15 lessons
+        System.out.println("-----------------------");
     }
 }

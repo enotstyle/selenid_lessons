@@ -1,31 +1,37 @@
 package demoqa;
 
 import com.github.javafaker.Faker;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.Arguments;
+import org.junit.jupiter.params.provider.MethodSource;
 import pages.PracticeFormPage;
 
 import java.io.File;
-import java.util.Locale;
+import java.util.stream.Stream;
 
-import static demoqa.utils.RandomUtils.getRandomEmail;
-import static demoqa.utils.RandomUtils.randomString;
+import static pages.PracticeFormPage.Hobby;
 
-public class PracticeFormWithFakerTest extends BaseTest {
+public class RegistrationFormTests extends BaseTest {
 
-
-    @Test
-    void successfulRegistrationTest() {
-
-        String firstName = Faker.instance().name().firstName();
-        String lastName = Faker.instance(new Locale("ru")).name().lastName();
+    static Stream<Arguments> selenideLocaleDataProvider() {
+        return Stream.of(
+                Arguments.of(Hobby.MUSIC, "Ivan"),
+                Arguments.of(Hobby.SPORTS, "Lera"),
+                Arguments.of(Hobby.READING, "Zaur")
+        );
+    }
+    @ParameterizedTest(name = "Register {1} with hobby {0}")
+    @MethodSource("selenideLocaleDataProvider")
+    void successfulRegistrationTest(Hobby hobby, String name) {
+        String firstName = name;
+        String lastName = Faker.instance().name().lastName();
         String email = Faker.instance().internet().emailAddress();
-        String phoneNumber = "1234567890";
+        String phoneNumber = Faker.instance().numerify("##########");
         String subject = "Computer Science";
         String currentAddress = "kirova 22-44";
         String state = "NCR";
         String city = "Noida";
-        File testFile = new File("C:\\Users\\Terenin.Iva\\IdeaProjects\\selenid_lessons\\src\\test\\resources\\readme.txt");
-
+        File testFile = new File("src/test/resources/readme.txt");
         PracticeFormPage practiceFormPage = new PracticeFormPage();
 
         practiceFormPage
@@ -37,7 +43,7 @@ public class PracticeFormWithFakerTest extends BaseTest {
                 .setUserPhoneNumber(phoneNumber)
                 .setBirthDate("11", "May", "2009")
                 .setSubject(subject)
-                .setHobbies(PracticeFormPage.Hobby.SPORTS)
+                .setHobbies(hobby)
                 .uploadFile(testFile)
                 .setCurrentAddress(currentAddress)
                 .setState(state)
@@ -45,8 +51,6 @@ public class PracticeFormWithFakerTest extends BaseTest {
                 .submit()
                 .resultModalAppears()
                 .verifyResultModal("Student Name", firstName + " " + lastName);
-
-        //TODO сделать верефикацию результатов в одной функцией
     }
 }
 
