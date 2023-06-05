@@ -13,6 +13,7 @@ public class BaseTest {
         Configuration.browserSize = "1920x1080";
         Configuration.baseUrl = "https://demoqa.com";
         Configuration.holdBrowserOpen = true;
+
     }
 }
 
