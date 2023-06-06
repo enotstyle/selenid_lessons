@@ -29,7 +29,7 @@ public class TestWithLambda {
     @Owner("Иван")
     @Severity(SeverityLevel.BLOCKER)
     @Link(value = "Testing", url = "https://testing.github.com") //ссылка
-    @DisplayName("Проверка названия issue")
+
     void checkNameIssueInRepo() {
         step("Открываем старинцу https://github.com/",
                 () -> open("https://github.com/"));
