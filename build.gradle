@@ -40,10 +40,7 @@ dependencies {
             "com.google.code.gson:gson:2.10",
             "com.github.javafaker:javafaker:1.0.2",
             "io.qameta.allure:allure-selenide:2.19.0"
-
     )
-
-
 }
 
 //используем junit для тестов
@@ -54,6 +51,12 @@ test {
 task simple_test(type: Test) {
     useJUnitPlatform {
         includeTags("Simple")
+    }
+}
+
+task simple_test(type: Test) {
+    useJUnitPlatform {
+        includeTags("Jenkins")
     }
 }
 

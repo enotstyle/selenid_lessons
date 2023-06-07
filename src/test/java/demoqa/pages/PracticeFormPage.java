@@ -1,4 +1,4 @@
-package pages;
+package demoqa.pages;
 
 import demoqa.components.Calendar;
 import demoqa.components.RegistrationResultsModal;

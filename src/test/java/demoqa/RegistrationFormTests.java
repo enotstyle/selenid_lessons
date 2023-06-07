@@ -1,15 +1,16 @@
 package demoqa;
 
 import com.github.javafaker.Faker;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
-import pages.PracticeFormPage;
+import demoqa.pages.PracticeFormPage;
 
 import java.io.File;
 import java.util.stream.Stream;
 
-import static pages.PracticeFormPage.Hobby;
+import static demoqa.pages.PracticeFormPage.Hobby;
 
 public class RegistrationFormTests extends BaseTest {
 
@@ -20,6 +21,8 @@ public class RegistrationFormTests extends BaseTest {
                 Arguments.of(Hobby.READING, "Zaur")
         );
     }
+
+    @Tag("Jenkins")
     @ParameterizedTest(name = "Register {1} with hobby {0}")
     @MethodSource("selenideLocaleDataProvider")
     void successfulRegistrationTest(Hobby hobby, String name) {
