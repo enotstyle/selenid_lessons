@@ -17,25 +17,21 @@ public class BaseTest {
     @BeforeAll
     public static void tearUp() {
 
-//        Configuration.browserCapabilities = new ChromeOptions().addArguments("--remote-allow-origins=*");
         Configuration.pageLoadStrategy = "none";
         Configuration.browserSize = "1920x1080";
         Configuration.baseUrl = "https://demoqa.com";
         Configuration.holdBrowserOpen = true;
 
-
         //ссылка на удаленный selenoid, чтобы запуская через ide использовать его
         Configuration.remote = "https://user1:1234@selenoid.autotests.cloud/wd/hub";
 
-        //
-//        DesiredCapabilities capabilities = new DesiredCapabilities();
-//        capabilities.setCapability("selenoid:options", Map.<String, Object>of(
-//                "enableVNC", true,
-//                "enableVideo", true
-//        ));
-//
-//        Configuration.browserCapabilities = capabilities;
-
+        //включение видео
+        DesiredCapabilities capabilities = new DesiredCapabilities();
+        capabilities.setCapability("selenoid:options", Map.<String, Object>of(
+                "enableVNC", true,
+                "enableVideo", true
+        ));
+        Configuration.browserCapabilities = capabilities;
     }
 
 
@@ -49,7 +45,7 @@ public class BaseTest {
         Attach.screenshotAs("Last screenshot");
         Attach.pageSource();
         Attach.browserConsoleLogs();
-//        Attach.addVideo();
+        Attach.addVideo();
     }
 }
 
