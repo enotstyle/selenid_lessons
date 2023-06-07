@@ -60,4 +60,6 @@ task jen_test(type: Test) {
     }
 }
 
-//gradle simple_test
+//gradle clean simple_test
+//https://jenkins.autotests.cloud/
+//https://selenoid.autotests.cloud/#/
