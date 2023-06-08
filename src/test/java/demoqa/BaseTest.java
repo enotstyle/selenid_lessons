@@ -20,6 +20,8 @@ public class BaseTest {
         Configuration.pageLoadStrategy = "none";
         Configuration.browserSize = "1920x1080";
         Configuration.baseUrl = "https://demoqa.com";
+//        Configuration.baseUrl = System.getProperty("url", "https://demoqa.com");
+
         Configuration.holdBrowserOpen = true;
 
         //ссылка на удаленный selenoid, чтобы запуская через ide использовать его

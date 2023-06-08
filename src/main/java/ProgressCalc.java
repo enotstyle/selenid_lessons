@@ -42,5 +42,7 @@ class Test {
         System.out.println("-----------------------");
         calc.addMinutes(135); // 17 lessons
         System.out.println("-----------------------");
+        calc.addMinutes(190); // 18 lessons
+        System.out.println("-----------------------");
     }
 }
