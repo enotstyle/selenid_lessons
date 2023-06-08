@@ -48,6 +48,25 @@ test {
     useJUnitPlatform {}
 }
 
+//указывает на тип заданий, которые будут выполнены. В данном случае это задания типа "Test", что означает запуск тестового набора.
+tasks.withType(Test) {
+    //получить системные свойства Java, определенные при запуске сборки через аргументы командной строки -Dname=value
+    systemProperties(System.getProperties())
+    //указывает на использование фреймворка JUnit Platform для запуска тестов
+    useJUnitPlatform()
+
+    //определяет настройки логгирования результатов тестирования
+    testLogging {
+        //определяет список событий тестирования, которые должны быть залогированы.
+        lifecycle {
+            //В данном случае это started, skipped, failed, standard_error, standard_out.
+            events "started", "skipped", "failed", "standard_error", "standard_out"
+            //определяет формат вывода сообщений об ошибках (исключениях). В данном случае используется короткий формат "short".
+            exceptionFormat "short"
+        }
+    }
+}
+
 task simple_test(type: Test) {
     useJUnitPlatform {
         includeTags("Simple")
@@ -56,7 +75,22 @@ task simple_test(type: Test) {
 
 task jen_test(type: Test) {
     useJUnitPlatform {
+        //запустить тесты с этим тегом
         includeTags("Jenkins")
+        //не запускать тесты с этим тегом
+        excludeTags("Jenkins")
+    }
+}
+
+task one_property_test(type: Test) {
+    useJUnitPlatform {
+        includeTags("one_property")
+    }
+}
+
+task hello_test(type: Test) {
+    useJUnitPlatform {
+        includeTags("hello_test")
     }
 }
 
