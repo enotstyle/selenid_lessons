@@ -10,14 +10,14 @@ import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
 import static com.codeborne.selenide.Selenide.executeJavaScript;
 
-public class PracticeFormPage {
+public class RegistrationFormPage {
 
 
     private final static String titleText = "Student Registration Form";
     RegistrationResultsModal resultsModal = new RegistrationResultsModal();
     Calendar calendar = new Calendar();
 
-    public PracticeFormPage openPage() {
+    public RegistrationFormPage openPage() {
         open("/automation-practice-form");
         $(".practice-form-wrapper").shouldHave(text(titleText));
         executeJavaScript("$('#fixedban').remove()");
@@ -25,78 +25,78 @@ public class PracticeFormPage {
         return this;
     }
 
-    public PracticeFormPage setFirstName(String firstName) {
+    public RegistrationFormPage setFirstName(String firstName) {
         $("#firstName").setValue(firstName);
         return this;
     }
 
-    public PracticeFormPage setLastName(String lastName) {
+    public RegistrationFormPage setLastName(String lastName) {
         $("#lastName").setValue(lastName);
         return this;
     }
 
-    public PracticeFormPage setUserEmail(String userEmail) {
+    public RegistrationFormPage setUserEmail(String userEmail) {
         $("#userEmail").setValue(userEmail);
         return this;
     }
 
-    public PracticeFormPage setGenderOther() {
+    public RegistrationFormPage setGenderOther() {
         $("[for=gender-radio-3]").click();
         return this;
     }
 
-    public PracticeFormPage setUserPhoneNumber(String phoneNumber) {
+    public RegistrationFormPage setUserPhoneNumber(String phoneNumber) {
         $("#userNumber").setValue(phoneNumber);
         return this;
     }
 
-    public PracticeFormPage setBirthDate(String day, String month, String year) {
+    public RegistrationFormPage setBirthDate(String day, String month, String year) {
         $("#dateOfBirthInput").click();
         calendar.setDate(day, month, year);
         return this;
     }
 
-    public PracticeFormPage setSubject(String subject) {
+    public RegistrationFormPage setSubject(String subject) {
         $("#subjectsInput").setValue(subject).pressEnter();
         return this;
     }
 
-    public PracticeFormPage setHobbies(Hobby Hobby) {
+    public RegistrationFormPage setHobbies(Hobby Hobby) {
         $(byText(Hobby.getTittle())).click();
         return this;
     }
 
-    public PracticeFormPage uploadFile(File file) {
+    public RegistrationFormPage uploadFile(File file) {
         $("#uploadPicture").uploadFile(file);
         return this;
     }
 
-    public PracticeFormPage setCurrentAddress(String address) {
+    public RegistrationFormPage setCurrentAddress(String address) {
         $("#currentAddress").setValue(address);
         return this;
     }
 
-    public PracticeFormPage setState(String state) {
+    public RegistrationFormPage setState(String state) {
         $("#react-select-3-input").setValue(state).pressEnter();
         return this;
     }
 
-    public PracticeFormPage setCity(String city) {
+    public RegistrationFormPage setCity(String city) {
         $("#react-select-4-input").setValue(city).pressEnter();
         return this;
     }
 
-    public PracticeFormPage submit() {
+    public RegistrationFormPage submit() {
         $("#submit").click();
         return this;
     }
 
-    public PracticeFormPage resultModalAppears() {
+    public RegistrationFormPage resultModalAppears() {
         resultsModal.modalAppears();
         return this;
     }
 
-    public PracticeFormPage verifyResultModal(String key, String value) {
+    public RegistrationFormPage verifyResultModal(String key, String value) {
         resultsModal.verifyResults(key, value);
         return this;
     }
