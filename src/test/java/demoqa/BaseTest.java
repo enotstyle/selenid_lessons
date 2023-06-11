@@ -24,6 +24,7 @@ public class BaseTest {
         Configuration.browserVersion = System.getProperty("version", null);
 
         //ссылка на удаленный selenoid, чтобы запуская через ide использовать его
+//        Configuration.remote = "https://user1:1234@selenoid.autotests.cloud/wd/hub";
         Configuration.remote = System.getProperty("remote",
                 null);
 
