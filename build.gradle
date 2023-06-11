@@ -78,7 +78,7 @@ task jen_test(type: Test) {
         //запустить тесты с этим тегом
         includeTags("Jenkins")
         //не запускать тесты с этим тегом
-        excludeTags("Jenkins")
+//        excludeTags("Jenkins")
     }
 }
 
