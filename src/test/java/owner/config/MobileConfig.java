@@ -4,8 +4,8 @@ import org.aeonbits.owner.Config;
 
 
 @Config.Sources({
-        "classpath:${device}.properties", //такойго файла нет
-        "classpath:mobile.properties", //зачитает этот файл
+        "classpath:owner/${device}.properties", //такойго файла нет
+        "classpath:owner/mobile.properties", //зачитает этот файл
 })
 public interface MobileConfig extends Config {
 
