@@ -39,7 +39,11 @@ dependencies {
             "com.opencsv:opencsv:5.7.1",
             "com.google.code.gson:gson:2.10",
             "com.github.javafaker:javafaker:1.0.2",
-            "io.qameta.allure:allure-selenide:2.19.0"
+            "io.qameta.allure:allure-selenide:2.19.0",
+//            'org.seleniumhq.selenium:selenium-java:3.141.59',
+            'io.github.bonigarcia:webdrivermanager:5.2.1',
+            'org.aeonbits.owner:owner:1.0.4',
+            'org.assertj:assertj-core:3.23.1'
     )
 }
 
@@ -91,6 +95,12 @@ task one_property_test(type: Test) {
 task hello_test(type: Test) {
     useJUnitPlatform {
         includeTags("hello_test")
+    }
+}
+
+task owner_test(type: Test) {
+    useJUnitPlatform {
+        includeTags("owner")
     }
 }
 
