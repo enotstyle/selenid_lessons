@@ -23,7 +23,7 @@ public class ReqresInTests {
 
         given()
                 .log().uri()
-                .contentType(JSON)
+                .contentType(ContentType.JSON)
                 .body(data)
                 .when()
                 .post("https://reqres.in/api/login")
@@ -66,7 +66,7 @@ public class ReqresInTests {
 
         given()
                 .log().uri()
-                .contentType(JSON)
+                .contentType(ContentType.JSON)
                 .body(data)
                 .when()
                 .post("https://reqres.in/api/login")
