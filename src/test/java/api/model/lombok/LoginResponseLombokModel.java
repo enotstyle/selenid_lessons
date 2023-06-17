@@ -1,0 +1,11 @@
+package api.model.lombok;
+
+import lombok.Data;
+
+@Data
+public class LoginResponseLombokModel {
+
+    //    "token": "QpwL5tke4Pnpja7X4"";
+    String token;
+
+}
