@@ -47,7 +47,8 @@ dependencies {
             'org.assertj:assertj-core:3.23.1',
             "io.rest-assured:rest-assured:5.3.0",
             'com.fasterxml.jackson.core:jackson-databind:2.15.2',
-            'io.qameta.allure:allure-rest-assured:2.22.2'
+            'io.qameta.allure:allure-rest-assured:2.22.2',
+            "com.fasterxml.jackson.core:jackson-databind:2.14.2",
     )
 }
 
