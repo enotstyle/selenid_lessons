@@ -61,5 +61,7 @@ class Test {
         System.out.println("-----------------------");
         calc.addMinutes(250); // 26
         System.out.println("-----------------------");
+        calc.addMinutes(60); // 27_1
+        System.out.println("-----------------------");
     }
 }

@@ -1,8 +1,6 @@
 package demoqa.config;
 
 import com.codeborne.selenide.Configuration;
-import demoqa.config.WebConfig;
-import groovy.xml.StreamingDOMBuilder;
 import org.aeonbits.owner.ConfigFactory;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
