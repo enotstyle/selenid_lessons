@@ -12,6 +12,8 @@ import static io.restassured.http.ContentType.JSON;
 import static org.hamcrest.Matchers.notNullValue;
 
 public class LoginSpec {
+
+    //спеку вставлять в метод .given() или использывать Specs.request...
     public static RequestSpecification loginRequestSpec = with()
             .filter(withCustomTemplates())
             .log().uri()
@@ -21,11 +23,12 @@ public class LoginSpec {
             .baseUri("https://reqres.in")
             .basePath("/api");
 
+    //вызывать после then() с помощью .spec()
     public static ResponseSpecification loginResponseSpec = new ResponseSpecBuilder()
             .log(STATUS)
             .log(BODY)
             .expectStatusCode(200)
-            .expectBody("token", notNullValue())
+            .expectBody("token",  notNullValue())
             .build();
 
 }

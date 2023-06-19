@@ -1,6 +1,7 @@
-package api.homework;
+package api.homework.tests;
 
-import api.model.lombok.LoginResponseLombokModel;
+import api.homework.model.LoginBodyModel;
+import api.homework.model.LoginResponseModel;
 import io.restassured.http.ContentType;
 import org.junit.jupiter.api.Test;
 

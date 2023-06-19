@@ -1,4 +1,4 @@
-package api.homework;
+package api.homework.model;
 
 public class LoginBodyModel {
     //{
