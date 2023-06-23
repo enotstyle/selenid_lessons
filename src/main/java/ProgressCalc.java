@@ -63,5 +63,19 @@ class Test {
         System.out.println("-----------------------");
         calc.addMinutes(150); // 27 lessons
         System.out.println("-----------------------");
+        calc.addMinutes(130); // 28 lessons
+        System.out.println("-----------------------");
+        calc.addMinutes(100); // 29 lessons
+        System.out.println("-----------------------");
+        calc.addMinutes(190); // 30 lessons (не смотрел)
+        System.out.println("-----------------------");
+        calc.addMinutes(90); // 31 lessons (не смотрел)
+        System.out.println("-----------------------");
+        calc.addMinutes(90); // 32 lessons (не смотрел)
+        System.out.println("-----------------------");
+        calc.addMinutes(190); // 33 lessons
+        System.out.println("-----------------------");
+        calc.addMinutes(45); // 34 lessons
+        System.out.println("-----------------------");
     }
 }
